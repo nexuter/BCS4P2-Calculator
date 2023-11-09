@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function CalculatorInput({ result, setResult }) {
   function onChangeResult(e) {
     setResult(e.target.value);

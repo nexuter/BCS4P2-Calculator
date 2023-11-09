@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CalculatorInput from "./components/CalculatorInput";
 import CalculatorNumButton from "./components/CalculatorNumButton";
+import CalculatorDelButton from "./components/CalculatorDelButton";
 
 function App() {
   const [result, setResult] = useState("0");
@@ -13,7 +14,7 @@ function App() {
       >
         <CalculatorInput result={result} setResult={setResult} />
 
-        <div className="grid grid-cols-4 mt-8 gap-4">
+        <div className="grid grid-cols-5 mt-8 gap-4">
           <CalculatorNumButton
             result={result}
             setResult={setResult}
@@ -29,7 +30,8 @@ function App() {
             setResult={setResult}
             number={9}
           />
-          <button className="button-style">/</button>
+          <button className="button-style">÷</button>
+          <CalculatorDelButton result={result} setResult={setResult} />
           <CalculatorNumButton
             result={result}
             setResult={setResult}
@@ -45,7 +47,8 @@ function App() {
             setResult={setResult}
             number={6}
           />
-          <button className="button-style">x</button>
+          <button className="button-style">×</button>
+          <button className="button-style">±</button>
           <CalculatorNumButton
             result={result}
             setResult={setResult}
@@ -62,6 +65,7 @@ function App() {
             number={3}
           />
           <button className="button-style">-</button>
+          <button className="button-style">%</button>
           <button className="button-style">AC</button>
           <CalculatorNumButton
             result={result}
@@ -74,6 +78,7 @@ function App() {
             number={"."}
           />
           <button className="button-style">+</button>
+          <button className="button-style">=</button>
         </div>
       </form>
     </main>
