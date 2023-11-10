@@ -6,4 +6,7 @@
   .button-style {
     @apply w-16 h-16 bg-gray-500 text-white text-xl rounded-xl active:bg-gray-700;
   }
+  .ac-button-style {
+    @apply w-16 h-16 bg-red-300 font-bold text-black text-xl rounded-xl active:bg-red-500;
+  }
 }

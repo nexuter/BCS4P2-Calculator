@@ -1,8 +1,21 @@
-import { useState } from "react";
-
-function CalculatorNumButton({ result, setResult, number }) {
+function CalculatorNumButton({
+  result,
+  setResult,
+  number,
+  keying,
+  setKeying,
+  setUpdateOp,
+}) {
   function onClickNumber() {
-    if (result.length < 16) {
+    setUpdateOp(false);
+    if (!keying) {
+      if (number === ".") {
+        setResult("0" + String(number));
+      } else {
+        setResult(String(number));
+      }
+      setKeying(true);
+    } else if (result.length < 14) {
       if (result === "0") {
         if (String(number) === ".") {
           if (result.indexOf(".") < 0) {
